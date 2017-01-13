@@ -114,6 +114,8 @@ sub scan_prereqs {
     require File::Find;
     File::Find::find(
         sub {
+            no warnings 'once';
+
             return unless -f;
             my $path = "$File::Find::dir/$_";
             if (Filename::Backup::check_backup_filename(filename=>$_)) {
