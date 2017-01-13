@@ -17,7 +17,7 @@ $SPEC{scan_prereqs} = {
 
 This is an alternative CLI to <pm:scan_prereqs>. This CLI offers alternate
 backends: aside from <pm:Perl::PrereqScanner> you can also use
-<pm:Perl::PrereqScanner::Lite> and <pm::Perl::PrereqScanner::NotQuiteLite>. Some
+<pm:Perl::PrereqScanner::Lite> and <pm:Perl::PrereqScanner::NotQuiteLite>. Some
 other features: output in various formats (text table, JSON), filter only core
 or non-core prerequisites.
 
