@@ -77,6 +77,8 @@ _
         {
             summary => 'By default scan current directory',
             args => {},
+            test => 0,
+            'x.doc.show_result' => 0,
         },
     ],
 };
