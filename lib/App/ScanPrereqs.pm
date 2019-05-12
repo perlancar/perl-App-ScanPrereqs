@@ -28,9 +28,8 @@ _
             'x.name.singular' => 'file',
             schema => ['array*', of=>'pathname*'],
             default => ['.'],
-            req => 1,
             pos => 0,
-            greedy => 1,
+            slurpy => 1,
         },
         scanner => {
             schema => ['str*', in=>['regular','lite','nqlite']],
