@@ -1,3 +1,10 @@
+0.005   2019-07-31  Released-By: PERLANCAR; Urgency: low
+
+        - No functional changes.
+
+	- [doc] Tweak Description.
+
+
 0.004   2019-07-31  Released-By: PERLANCAR; Urgency: high
 
         - [build] Rebuild to remove dependency to Sah coerce rule module that is
