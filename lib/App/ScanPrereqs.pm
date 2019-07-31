@@ -12,14 +12,25 @@ our %SPEC;
 
 $SPEC{scan_prereqs} = {
     v => 1.1,
-    summary => 'Scan source code for prerequisites',
+    summary => 'Scan files/directories for prerequisites',
     description => <<'_',
 
-This is an alternative CLI to <pm:scan_prereqs>. This CLI offers alternate
-backends: aside from <pm:Perl::PrereqScanner> you can also use
-<pm:Perl::PrereqScanner::Lite> and <pm:Perl::PrereqScanner::NotQuiteLite>. Some
-other features: output in various formats (text table, JSON), filter only core
-or non-core prerequisites.
+This is an alternative CLI to <pm:scan_prereqs>, with the following features:
+
+* merged output
+
+scan_prereqs by default reports prereqs per source file, which may or may not be
+what you want. This CLI outputs a single list of prerequisites found from all
+input.
+
+Aside from that, you can use `--json` to get a JSON output.
+
+* option to pick backend
+
+Aside from <pm:Perl::PrereqScanner> you can also use
+<pm:Perl::PrereqScanner::Lite> and <pm:Perl::PrereqScanner::NotQuiteLite>.
+
+* filter only core or non-core prerequisites.
 
 _
     args => {
