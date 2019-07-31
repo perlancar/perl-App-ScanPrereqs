@@ -1,3 +1,9 @@
+0.004   2019-07-31  Released-By: PERLANCAR; Urgency: high
+
+        - [build] Rebuild to remove dependency to Sah coerce rule module that is
+          now renamed.
+
+
 0.003   2017-07-03  Released-By: PERLANCAR
 
 	- No functional changes.
