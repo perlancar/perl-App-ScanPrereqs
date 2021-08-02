@@ -2,3 +2,4 @@ App-ScanPrereqs-*
 .build
 *~
 nytprof*
+.DS_Store
