@@ -1,19 +1,21 @@
 package App::ScanPrereqs;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 use Log::ger;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our %SPEC;
 
 $SPEC{scan_prereqs} = {
     v => 1.1,
     summary => 'Scan files/directories for prerequisites',
-    description => <<'_',
+    description => <<'MARKDOWN',
 
 This is an alternative CLI to <pm:scan_prereqs>, with the following features:
 
@@ -32,7 +34,7 @@ Aside from <pm:Perl::PrereqScanner> you can also use
 
 * filter only core or non-core prerequisites.
 
-_
+MARKDOWN
     args => {
         files => {
             'x.name.is_plural' => 1,
@@ -46,7 +48,7 @@ _
             schema => ['str*', in=>['regular','lite','nqlite']],
             default => 'regular',
             summary => 'Which scanner to use',
-            description => <<'_',
+            description => <<'MARKDOWN',
 
 `regular` means <pm:Perl::PrereqScanner> which is PPI-based and is the slowest
 but has the most complete support for Perl syntax.
@@ -61,15 +63,15 @@ given some weird code.
 Read respective scanner's documentation for more details about the pro's and
 con's for each scanner.
 
-_
+MARKDOWN
         },
         perlver => {
             summary => 'Perl version to use when determining core/non-core',
-            description => <<'_',
+            description => <<'MARKDOWN',
 
 The default is the current perl version.
 
-_
+MARKDOWN
             schema => 'str*',
         },
         show_core => {
@@ -93,7 +95,7 @@ _
     ],
 };
 sub scan_prereqs {
-    require Filename::Backup;
+    require Filename::Type::Backup;
     require File::Find;
 
     my %args = @_;
@@ -130,7 +132,7 @@ sub scan_prereqs {
 
             return unless -f;
             my $path = "$File::Find::dir/$_";
-            if (Filename::Backup::check_backup_filename(filename=>$_)) {
+            if (Filename::Type::Backup::check_backup_filename(filename=>$_)) {
                 log_debug("Skipping backup file %s ...", $path);
                 return;
             }
